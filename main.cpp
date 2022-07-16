@@ -11,7 +11,8 @@
 // #include "./exercise9/flyweight.cpp"
 // #include "./exercise10/proxy.cpp"
 // #include "./exercise11/chain_of_responsibility.cpp"
-#include "./exercise12/command.cpp"
+// #include "./exercise12/command.cpp"
+#include "./exercise13/interpreter.cpp"
 
 int main() {
   // Exercise 1
@@ -153,6 +154,12 @@ int main() {
   // print(cmd, account);
 
   // Exercise 13
+  ExpressionProcessor proc;
+  std::cout << proc.calculate("1") << std::endl;
+  std::cout << proc.calculate("1+2+3") << std::endl;
+  std::cout << proc.calculate("1+2+xy") << std::endl;
+  proc.variables['x'] = 3;
+  std::cout << proc.calculate("10-2-x") << std::endl;
 
   return 0;
 }
