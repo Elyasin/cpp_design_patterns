@@ -12,7 +12,8 @@
 // #include "./exercise10/proxy.cpp"
 // #include "./exercise11/chain_of_responsibility.cpp"
 // #include "./exercise12/command.cpp"
-#include "./exercise13/interpreter.cpp"
+// #include "./exercise13/interpreter.cpp"
+#include "./exercise14/iterator.cpp"
 
 int main() {
   // Exercise 1
@@ -154,12 +155,26 @@ int main() {
   // print(cmd, account);
 
   // Exercise 13
-  ExpressionProcessor proc;
-  std::cout << proc.calculate("1") << std::endl;
-  std::cout << proc.calculate("1+2+3") << std::endl;
-  std::cout << proc.calculate("1+2+xy") << std::endl;
-  proc.variables['x'] = 3;
-  std::cout << proc.calculate("10-2-x") << std::endl;
+  // ExpressionProcessor proc;
+  // std::cout << proc.calculate("1") << std::endl;
+  // std::cout << proc.calculate("1+2+3") << std::endl;
+  // std::cout << proc.calculate("1+2+xy") << std::endl;
+  // proc.variables['x'] = 3;
+  // std::cout << proc.calculate("10-2-x") << std::endl;
+
+  // Exercise 14
+  // node<char> e('e');
+  // node<char> d('d');
+  // node<char> c('c', &d, &e);
+  // node<char> b('b');
+  // node<char> a('a', &b, &c);
+  // std::vector<node<char> *> result;
+  // a.preorder_traversal(result);
+  // for (node<char> *n : result)
+  //   std::cout << n->value << ", ";
+  // std::cout << std::endl;
+
+  // Exercise 15
 
   return 0;
 }
