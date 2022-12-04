@@ -13,7 +13,14 @@
 // #include "./exercise11/chain_of_responsibility.cpp"
 // #include "./exercise12/command.cpp"
 // #include "./exercise13/interpreter.cpp"
-#include "./exercise14/iterator.cpp"
+// #include "./exercise14/iterator.cpp"
+// #include "./exercise15/mediator.cpp"
+// #include "./exercise16/memento.cpp"
+// #include "./exercise17/observer.cpp"
+// #include "./exercise18/state.cpp"
+// #include "./exercise19/strategy.cpp"
+// #include "./exercise20/template_method.cpp"
+#include "./exercise21/visitor.cpp"
 
 int main() {
   // Exercise 1
@@ -50,9 +57,9 @@ int main() {
   //           << adapter.area() << std::endl;
 
   // Exercise 6
-  // RasterRenderer rastRend;
-  // std::cout << Triangle(rastRend).str() << std::endl;
-  // std::cout << Square(rastRend).str() << std::endl;
+  // RasterRenderer rasterRend;
+  // std::cout << Triangle(rasterRend).str() << std::endl;
+  // std::cout << Square(rasterRend).str() << std::endl;
   // VectorRenderer vecRend;
   // std::cout << Triangle(vecRend).str() << std::endl;
   // std::cout << Square(vecRend).str() << std::endl;
@@ -175,6 +182,91 @@ int main() {
   // std::cout << std::endl;
 
   // Exercise 15
+  // Mediator mediator;
+  // Participant participant1{mediator};
+  // Participant participant2{mediator};
+  // Participant participant3{mediator};
+  // participant1.say(3);
+  // participant2.say(2);
+  // participant3.say(4);
+  // participant1.print();
+  // participant2.print();
+  // participant3.print();
+
+  // Exercise 16
+  // TokenMachine tm;
+  // auto token = std::make_shared<Token>(111);
+  // tm.add_token(token);
+  // auto m = tm.add_token(222);
+  // token->value = 333;
+  // std::cout << "Before applying memento" << std::endl;
+  // for (auto &&token : tm.tokens) {
+  //   std::cout << token->value << ", ";
+  // }
+  // tm.revert(m);
+  // std::cout << std::endl << "After applying memento" << std::endl;
+  // for (auto &&token : tm.tokens) {
+  //   std::cout << token->value << ", ";
+  // }
+
+  // Exercise 17
+  // Game game;
+  // Rat rat1{game};
+  // std::cout << "One rat in the game. Attack of rat1 = " << rat1.attack
+  //           << std::endl;
+  // Rat rat2{game};
+  // std::cout << "Two rats in the game. Attack of rat1 = " << rat1.attack
+  //           << std::endl;
+  // Rat rat3{game};
+  // std::cout << "Three rats in the game. Attack of rat1 = " << rat1.attack
+  //           << std::endl;
+
+  // Exercise 18
+  // CombinationLock cl1({1, 2, 3});
+  // cl1.enter_digit(1);
+  // cl1.enter_digit(2);
+  // cl1.enter_digit(3);
+  // std::cout << cl1.status << std::endl;
+  // CombinationLock cl2({3, 2, 1});
+  // cl2.enter_digit(3);
+  // cl2.enter_digit(2);
+  // cl2.enter_digit(3);
+  // std::cout << cl2.status << std::endl;
+
+  // Exercise 19
+  // OrdinaryDiscriminantStrategy ordinaryDiscriminant;
+  // QuadraticEquationSolver solver1{ordinaryDiscriminant};
+  // auto res1 = solver1.solve(1, 2, 3);
+  // std::cout << "Ordinary: (" << std::get<0>(res1) << ", " <<
+  // std::get<1>(res1)
+  //           << ")" << std::endl;
+  // RealDiscriminantStrategy realDiscriminant;
+  // QuadraticEquationSolver solver2{realDiscriminant};
+  // auto res2 = solver2.solve(1, 2, 3);
+  // std::cout << "Real Discriminant: (" << std::get<0>(res2) << ", "
+  //           << std::get<1>(res2) << ")" << std::endl;
+
+  // Exercise 20
+  // Creature creature1{1, 1};
+  // Creature creature2{1, 2};
+  // TemporaryCardDamageGame temp{{creature1, creature1}};
+  // int result = temp.combat(0, 1);
+  // std::cout << "Winner is: " << result << std::endl;
+  // Creature creature3{1, 1};
+  // Creature creature4{1, 2};
+  // PermanentCardDamageGame perm{{creature3, creature4}};
+  // result = perm.combat(0, 1);
+  // std::cout << "Winner is: " << result << std::endl;
+
+  // Exercise 21
+  Value value1{1};
+  Value value2{2};
+  Value value3{3};
+  MultiplicationExpression multiExpr{value2, value3};
+  AdditionExpression addExpr{value1, multiExpr};
+  ExpressionPrinter ep;
+  addExpr.visit(ep);
+  std::cout << ep.str() << std::endl;
 
   return 0;
 }
